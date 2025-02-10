@@ -1,0 +1,30 @@
+version: "3.9"
+
+########################### SECRETS
+secrets:
+  plex_claim:
+    file: $DOCKERDIR/secrets/plex_claim
+
+include:
+  ########################### SERVICES
+  # PREFIX udms = Ultimate Docker Media Server
+ 
+  # CORE
+  - compose/portainer.yml
+  - compose/heimdall.yml
+  - compose/homeassistant.yml
+  # MEDIA
+  - compose/plex.yml
+   # DOWNLOADERS
+  - compose/qbittorrent.yml
+  # PVRS
+  - compose/radarr.yml
+  - compose/sonarr.yml
+  # COMPLEMENTARY APPS
+  - compose/bazarr.yml
+  - compose/tautulli.yml
+  - compose/overseerr.yml
+  # MAINTENANCE
+  #- compose/docker-gc.yml
+  # UTILITIES
+  #- compose/filebrowser.yml
