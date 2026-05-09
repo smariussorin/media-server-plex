@@ -1,7 +1,8 @@
 services:
-  overseerr:
-    image: sctx/overseerr:latest
-    container_name: overseerr
+  seerr:
+    image: ghcr.io/seerr-team/seerr:latest
+    init: true
+    container_name: seerr
     environment:
       - LOG_LEVEL=debug
       - TZ=$TZ
@@ -9,5 +10,5 @@ services:
     ports:
       - 5055:5055
     volumes:
-      - $DOCKERDIR/appdata/overseerr:/app/config
+      - $DOCKERDIR/appdata/seerr:/app/config
     restart: unless-stopped
