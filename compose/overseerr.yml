@@ -10,5 +10,5 @@ services:
     ports:
       - 5055:5055
     volumes:
-      - $DOCKERDIR/appdata/seerr:/app/config
+      - $DOCKERDIR/appdata/overseerr:/app/config
     restart: unless-stopped
